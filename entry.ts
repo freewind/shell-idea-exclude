@@ -1,4 +1,7 @@
-import $ from 'jquery'
-import './index.css';
+import {execSync} from 'child_process';
 
-$('#main').text('Hello, webpack!');
+const files = execSync('ls', {
+  encoding: 'utf-8',
+});
+
+console.log(files);

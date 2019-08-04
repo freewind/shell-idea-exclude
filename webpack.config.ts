@@ -1,35 +1,28 @@
 import {Configuration} from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import webpack = require('webpack');
 
 const config: Configuration = {
-  mode: "development",
+  mode: 'development',
+  target: 'node',
   entry: './entry.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [{
-      test: /\.css$/,
-      use: [
-        {loader: 'style-loader'},
-        {loader: 'css-loader'}
-      ]
-    }, {
       test: /\.ts$/,
       loader: 'ts-loader',
-      exclude: /node_modules/
-    }]
+      exclude: /node_modules/,
+    }],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html'
-    }) as any
-  ]
-}
+    new webpack.BannerPlugin({banner: '#!/usr/bin/env node', raw: true}),
+  ],
+};
 
 export default config;
