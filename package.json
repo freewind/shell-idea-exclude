@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "webpack",
-    "postbuild": "chmod +x ./dist/bundle.js && cp -rf ./dist/bundle.js ~/bin/typescript-webpack-child-process-execsync-demo"
+    "postbuild": "chmod +x ./dist/bundle.js && cp -rf ./dist/bundle.js ~/bin/typescript-webpack-shell-demo"
   },
   "dependencies": {},
   "devDependencies": {

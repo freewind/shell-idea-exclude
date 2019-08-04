@@ -1,11 +1,9 @@
-TypeScript Webpack "child_process" "execSync" Demo
-==================================================
+TypeScript Webpack Shell Demo
+=============================
 
-Use `execSync` of `child_process` module to run command.
-
-Use webpack to package everything into a single executable file.
+How to use typescript to write shell command.
 
 ```
 npm install
-npm run dev
+npm run build
 ```

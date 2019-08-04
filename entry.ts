@@ -1,7 +1,4 @@
-import {execSync} from 'child_process';
+import {exec} from './common';
 
-const files = execSync('ls', {
-  encoding: 'utf-8',
-});
-
+const files = exec('ls');
 console.log(files);
